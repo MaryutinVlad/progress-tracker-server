@@ -4,10 +4,13 @@ const bodyParser = require('body-parser');
 const { celebrate, Joi, errors } = require('celebrate');
 
 const auth = require('./middlewares/auth');
+
 const userRouter = require('./routes/users');
 const { login, createUser } = require('./controllers/users');
+
 const activitiesRouter = require('./routes/activities');
 const trialsRouter = require('./routes/trials');
+const achievementsRouter = require('./routes/achievements');
 
 const app = express();
 
@@ -36,6 +39,7 @@ app.post('/signin', celebrate({
 app.use('/', auth, userRouter);
 app.use('/', auth, trialsRouter);
 app.use('/', auth, activitiesRouter);
+app.use('/', achievementsRouter);
 
 app.use(errors());
 app.use('/', (req, res, next) => next(new NotFoundError('Wrong path')));
