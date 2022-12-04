@@ -1,6 +1,7 @@
 const Activities = require('../models/activities');
 const Zones = require('../models/zones');
 const User = require('../models/users');
+const Trials = require('../models/trials');
 
 module.exports.getData = (_req, res, next) => {
 
@@ -132,7 +133,7 @@ module.exports.endDay = (req, res, next) => {
 
 module.exports.restartMap = (req, res, next) => {
   User.findByIdAndUpdate(req.user._id, {
-    wp: 50,
+    wp: 20,
     slots: 0
   }, { new: true })
     .then((updatedUser) => {
@@ -140,11 +141,15 @@ module.exports.restartMap = (req, res, next) => {
         .then((restartedActivities) => {
           Zones.updateMany({ bought: true }, { bought: false }, { new: true })
             .then((refreshedZones) => {
-              return res.send({
-                user: updatedUser,
-                activities: restartedActivities,
-                zones: refreshedZones 
-              });
+              Trials.updateMany({ unlocked: true }, { unlocked: false }, { new: true })
+                .then((restartedTrials) => {
+                  return res.send({
+                    user: updatedUser,
+                    activities: restartedActivities,
+                    zones: refreshedZones,
+                    trials: restartedTrials
+                  });
+                })
             })
         })
         .catch((err) => {

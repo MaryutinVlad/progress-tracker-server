@@ -12,6 +12,6 @@ activitiesRouter.put('/activities/:activityId', upgradeActivity);
 
 activitiesRouter.put('/activities/zones/:zoneId', purchaseZone);
 
-activitiesRouter.delete('/activities', restartMap);
+activitiesRouter.delete('/restart', restartMap);
 
 module.exports = activitiesRouter;
