@@ -7,6 +7,10 @@ const trialSchema = new mongoose.Schema({
     baseReward: Number,
     incReward: Number,
     maxReward: Number,
+    completed: {
+        type: Number,
+        default: 0
+    },
     unlocked: {
         type: Boolean,
         default: false

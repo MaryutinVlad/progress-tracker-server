@@ -43,17 +43,23 @@ module.exports.unlockTrial = (req, res, next) => {
 }
 
 module.exports.completeTrial = (req, res, next) => {
-  const { wp, nextReward } = req.body;
+  const { wp, nextReward, nextCompleted, xp } = req.body;
 
   Trials.findByIdAndUpdate(
     req.params.id,
-    { incReward: nextReward },
+    {
+      incReward: nextReward,
+      completed: nextCompleted
+    },
     { new: true }
     )
     .then(updatedTrial => {
       User.findByIdAndUpdate(
         req.user._id,
-        { wp },
+        {
+          wp,
+          xp: xp + nextReward
+        },
         { new: true }
       )
       .then(updatedUser => {

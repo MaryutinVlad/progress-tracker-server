@@ -5,6 +5,7 @@
 		"cost": 15,
 		"baseReward": 1,
 		"incReward": 1,
+		"completed": 0,
 		"maxReward": 5
   },
 	{
@@ -12,6 +13,7 @@
 		"description": "Pett restriction",
 		"cost": 30,
 		"baseReward": 1,
+		"completed": 0,
 		"incReward": 1.5,
 		"maxReward": 8
   },
@@ -20,6 +22,7 @@
 		"description": "Nicotine restriction",
 		"cost": 50,
 		"baseReward": 1,
+		"completed": 0,
 		"incReward": 2.5,
 		"maxReward": 13
   },
@@ -28,6 +31,7 @@
 		"description": "Harmful expenses restriction",
 		"cost": 20,
 		"baseReward": 1,
+		"completed": 0,
 		"incReward": 0.5,
 		"maxReward": 10
   },
@@ -36,6 +40,7 @@
 		"description": "Heavy harmful expenses restriction",
 		"cost": 65,
 		"baseReward": 1,
+		"completed": 0,
 		"incReward": 0.5,
 		"maxReward": 15
   },
@@ -44,6 +49,7 @@
 		"description": "Ultimate harmful expenses restriction",
 		"cost": 125,
 		"baseReward": 1,
+		"completed": 0,
 		"incReward": 0.5,
 		"maxReward": 25
   },
@@ -52,6 +58,7 @@
 		"description": "test",
 		"cost": 25,
 		"baseReward": 1,
+		"completed": 0,
 		"incReward": 1,
 		"maxReward": 8
   },
@@ -60,6 +67,7 @@
 		"description": "another test",
 		"cost": 25,
 		"baseReward": 1,
+		"completed": 0,
 		"incReward": 1,
 		"maxReward": 8
   }

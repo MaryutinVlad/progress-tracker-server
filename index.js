@@ -38,8 +38,8 @@ app.post('/signin', celebrate({
 
 app.use('/', auth, userRouter);
 app.use('/', auth, trialsRouter);
-app.use('/', auth, activitiesRouter);
-app.use('/', achievementsRouter);
+app.use('/activities', auth, activitiesRouter);
+app.use('/', auth, achievementsRouter);
 
 app.use(errors());
 app.use('/', (req, res, next) => next(new NotFoundError('Wrong path')));

@@ -1,5 +1,4 @@
 const allowedCors = [
-    'https://www.pixilart.com',
     'http://localhost:3000',
     'https://localhost:3000',
     'https://localhost:5000',
